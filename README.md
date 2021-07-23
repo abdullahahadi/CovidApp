@@ -1,2 +1,3 @@
 # CovidApp
-A simple app for covid-19 information according to country name
+An app about covid-19 information based on country name:
+You can search for any country in the search bar.
