@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covied App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" 
+crossorigin="anonymous"></script>
+
+<script src="js/angular.min.js"></script>
+<script src="js/myscript.js"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+   <div class="container">
+       
+    <div class="jumbotron py-3">
+        <div class="logo text-center">
+            <img src="images/logo.png" alt="">
+        </div>
+        <h1 class="text-center mt-2">{{title}}</h1>
+        <p class="pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Vitae odit reiciendis sit Omnis laboriosam rerum nulla! Expedita mollitia 
+            voluptatibus iste doloribus vel ex, accusamus soluta totam maxime nobis porro eaque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Vitae odit reiciendis sit Omnis laboriosam rerum nulla!.
+        </p>
+
+        <!-- all data -->
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="card bg-warning text-white">
+                        <div class="card-body">
+                            <h4>World Confirm Cases</h4>
+                            <h3>{{all_data.confirmed.value}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-success text-white">
+                        <div class="card-body">
+                            <h3>World Recovered Cases</h3>
+                            <h4> {{all_data.recovered.value}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-danger text-white">
+                        <div class="card-body">
+                            <h4>World Death Cases</h4>
+                            <h3>{{all_data.deaths.value}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- end all data -->
+        <input 
+            type="text" 
+            class="form-control mt-4" 
+            ng-model="countryName" 
+            ng-change="get_c_data()"
+            placeholder="Enter Country Name here">
+
+            <!-- search data -->
+        <div class="container-fluid" ng-if="c_data">
+            <h1 class="text-center mt-4 text-uppercase">{{countryName}} Status</h1>
+            <div class="row text-center mt-5" >
+                <div class="col-md-4">
+                    <div class="card bg-warning text-white">
+                        <div class="card-body">
+                            <h3>Confirm Cases</h3>
+                            <h3>{{c_data.confirmed.value}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-success text-white">
+                        <div class="card-body">
+                            <h3>Recovered Cases</h3>
+                            <h3>{{c_data.recovered.value}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-danger text-white">
+                        <div class="card-body">
+                            <h3>Death Cases</h3>
+                            <h3>{{c_data.deaths.value}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+</body>
+</html>
